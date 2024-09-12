@@ -6,6 +6,9 @@ Este repositorio contiene un proyecto de un gestor de tareas construido con **Ne
 ## Para levantar el proyecto
 Clona el proyecto, luego usa npm i y luego para levantar el servidor usa npm run start:dev
 
+## Crea la base de datos
+El gestor usado es postgresSQL, crea la base de datos para poder gestionarla a lo largo del proyecto.
+
 ## Configuración del Entorno  
 Antes de comenzar, asegúrate de añadir las variables de entorno necesarias. Puedes usar el archivo `env.template` incluido en el proyecto como referencia para configurarlas correctamente.
 
