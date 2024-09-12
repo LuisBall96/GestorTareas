@@ -4,6 +4,8 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TareasModule } from './tareas/tareas.module';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
  
 
 @Module({
@@ -26,6 +28,8 @@ import { TareasModule } from './tareas/tareas.module';
       }),
     }),
     TareasModule,
+    UsersModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
