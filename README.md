@@ -3,6 +3,9 @@
 
 Este repositorio contiene un proyecto de un gestor de tareas construido con **NestJS**. A continuación, te explicaré cómo configurar el entorno y los endpoints disponibles.
 
+## Para levantar el proyecto
+Clona el proyecto, luego usa npm i y luego para levantar el servidor usa npm run start:dev
+
 ## Configuración del Entorno  
 Antes de comenzar, asegúrate de añadir las variables de entorno necesarias. Puedes usar el archivo `env.template` incluido en el proyecto como referencia para configurarlas correctamente.
 
