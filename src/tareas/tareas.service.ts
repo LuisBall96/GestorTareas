@@ -21,7 +21,7 @@ export class TareasService {
     return this.tareaRepository.find()
   }
 
-  async findOne(id: string) {
+  async findOne(id: number) {
     const tarea = await this.tareaRepository.findOne({
       where: {
           id
@@ -34,7 +34,7 @@ export class TareasService {
     return tarea;
   }
 
-  async update(id: string, updateTareaDto: UpdateTareaDto): Promise<Tarea> {
+  async update(id: number, updateTareaDto: UpdateTareaDto): Promise<Tarea> {
 
     const tareaParaActualizar = await this.tareaRepository.findOneBy({ id });
   
@@ -48,7 +48,7 @@ export class TareasService {
   }
   
 
-  async remove(id: string): Promise <Tarea> {
+  async remove(id: number): Promise <Tarea> {
     const tareaAEliminar = await this.tareaRepository.findOneBy({id})
 
     if (!tareaAEliminar) throw new NotFoundException('Tarea no encontrada')

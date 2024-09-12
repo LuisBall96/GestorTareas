@@ -22,19 +22,19 @@ export class TareasController {
 
   @Get(':id')
   @UseGuards(AuthGuard)
-  findOne(@Param('id') id: string) {
+  findOne(@Param('id') id: number) {
     return this.tareasService.findOne(id);
   }
 
   @Patch(':id')
   @UseGuards(AuthGuard)
-  update(@Param('id') id: string, @Body() updateTareaDto: UpdateTareaDto) {
+  update(@Param('id') id: number, @Body() updateTareaDto: UpdateTareaDto) {
     return this.tareasService.update(id, updateTareaDto);
   }
 
   @Delete(':id')
   @UseGuards(AuthGuard)
-  remove(@Param('id') id: string) {
+  remove(@Param('id') id: number) {
     return this.tareasService.remove(id);
   }
 }

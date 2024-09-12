@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Tarea } from "src/tareas/entities/tarea.entity";
+import { Column, CreateDateColumn, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
 
 
@@ -22,5 +23,8 @@ export class Usuario {
 
     @CreateDateColumn()
     createdAt: Date;
+
+    @OneToMany(() => Tarea, tarea => tarea.usuario)
+    tareas: Tarea[];
 
 }
