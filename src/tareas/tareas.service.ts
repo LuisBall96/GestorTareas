@@ -4,14 +4,21 @@ import { UpdateTareaDto } from './dto/update-tarea.dto';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Tarea } from './entities/tarea.entity';
 import { Repository } from 'typeorm';
+import { UsersService } from 'src/users/users.service';
 
 @Injectable()
 export class TareasService {
 
-  constructor(@InjectRepository(Tarea) private tareaRepository : Repository<Tarea>) {}
+  constructor(
+    private userService: UsersService,
+    @InjectRepository(Tarea) private tareaRepository : Repository<Tarea>) {}
 
   
-  async create(createTareaDto: CreateTareaDto): Promise<Tarea> {
+  async create(createTareaDto: CreateTareaDto) {
+
+    const user = await this.userService.findOne(createTareaDto.usuarioId);
+
+    if(!user) return new HttpException('Usurio no encontrado', HttpStatus.NOT_FOUND)
 
     const nuevaTarea = this.tareaRepository.create(createTareaDto)
     return await this.tareaRepository.save(nuevaTarea);

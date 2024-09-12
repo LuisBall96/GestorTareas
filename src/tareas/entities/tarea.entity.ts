@@ -13,7 +13,7 @@ export class Tarea {
     @Column({ nullable: false, length: 500 })
     descripcion:string;
 
-    @Column()
+    @Column({ nullable: false })
     usuarioId: number
 
     @ManyToOne(() => Usuario, usuario => usuario.tareas)

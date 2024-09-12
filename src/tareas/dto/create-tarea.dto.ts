@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString, MinLength } from "class-validator";
+import { IsNotEmpty, IsNumber, IsString, MinLength } from "class-validator";
 
 export class CreateTareaDto {
 
@@ -11,5 +11,8 @@ export class CreateTareaDto {
     @IsNotEmpty()
     @MinLength(10)
     descripcion:string
+
+    @IsNumber()
+    usuarioId:number
 
 }
